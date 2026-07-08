@@ -15,200 +15,452 @@
     <meta property="og:title" content="青岛教师网,教师资格证考试,中小学教师招聘考试网">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.qdjsw.com/">
-    <meta property="og:image" content="https://apps.qtimg.com/assets/brand/a9b10bb136fc4ff1.png">
+    <meta property="og:image" content="https://apps.qtimg.com/assets/brand/2f1215fe1a5e2008.png">
     <meta property="og:description" content="青岛教师网(www.qdjsw.com)为您提供青岛市教师资格网/教师招聘考试,中小学教师资格证考试,特岗教师考试公告,报名时间,报名入口,面试信息,试题资料等教师招聘真题,考试公告,语文,英语,数学,幼儿,音乐,美术,体育,信息技术等历年真题下载等教师招聘考试信息。包含历年真题,上岸备考资料,模拟真题押题卷。">
     <meta property="og:site_name" content="青岛教师网,教师资格证考试,中小学教师招聘考试网">
     <link href="https://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-        <script src="https://apps.alyjs.com/traffic/ec8443cda9b10bb136fc4ff10884c0d4.js"></script>
     <style>
-        * {
-            box-sizing: border-box;
-        }
         html, body {
             height: 100%;
-            margin: 0;
-            font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
             background: #fff;
+            font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #333;
         }
-        .login-wrapper {
-            min-height: 100%;
-            display: flex;
-            flex-direction: column;
+        a { transition: all 0.3s ease; }
+        a:hover, a:focus { text-decoration: none; }
+
+        /* ---------- navbar ---------- */
+        .navbar {
+            margin-bottom: 0;
+            border: none;
+            border-radius: 0;
+            background: rgba(255,255,255,0.96);
+            box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+            min-height: 56px;
         }
-        .login-main {
-            flex: 1;
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 20px;
+            color: #1a73e8 !important;
+            letter-spacing: 1px;
+            padding: 16px 20px;
+            height: auto;
+        }
+        .navbar-nav > li > a {
+            color: #555 !important;
+            font-size: 14px;
+            padding: 17px 16px;
+            height: auto;
+        }
+        .navbar-nav > li > a:hover,
+        .navbar-nav > li > a:focus {
+            color: #1a73e8 !important;
+            background: transparent !important;
+        }
+        .navbar-toggle { margin-top: 10px; border-color: #ddd; }
+        .navbar-toggle .icon-bar { background-color: #888; }
+
+        /* ---------- hero ---------- */
+        .hero {
+            background: linear-gradient(160deg, #fff 0%, #e8f0fe 40%, #d2e3fc 100%);
+            padding: 90px 0 80px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1a73e8;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+        .hero p.lead {
+            font-size: 18px;
+            color: #666;
+            max-width: 640px;
+            margin: 0 auto 10px;
+            line-height: 1.8;
+        }
+        .hero .badge-tag {
+            display: inline-block;
+            margin: 6px 8px;
+            padding: 6px 18px;
+            background: rgba(26,115,232,0.08);
+            color: #1a73e8;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .hero .btn-hero {
+            display: inline-block;
+            margin-top: 28px;
+            padding: 10px 42px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            background: linear-gradient(135deg, #1a73e8, #4285f4);
+            border: none;
+            border-radius: 24px;
+            box-shadow: 0 4px 14px rgba(26,115,232,0.3);
+            letter-spacing: 1px;
+        }
+        .hero .btn-hero:hover {
+            box-shadow: 0 6px 22px rgba(26,115,232,0.45);
+            transform: translateY(-1px);
+            color: #fff;
+        }
+
+        /* ---------- section common ---------- */
+        .section { padding: 70px 0; }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-title h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 10px;
+        }
+        .section-title .line {
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(135deg, #1a73e8, #4285f4);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+        .section-title p.sub {
+            color: #999;
+            font-size: 14px;
+            margin-top: 12px;
+        }
+
+        /* ---------- features ---------- */
+        .feature-card {
+            text-align: center;
+            padding: 30px 20px 20px;
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+            margin-bottom: 24px;
+            transition: all 0.35s ease;
+            border: 1px solid #f0f0f0;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 28px rgba(26,115,232,0.1);
+            border-color: #d2e3fc;
+        }
+        .feature-card .icon-circle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e8f0fe, #d2e3fc);
+            margin-bottom: 18px;
+            font-size: 26px;
+            color: #1a73e8;
+        }
+        .feature-card h4 {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .feature-card p {
+            color: #888;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* ---------- rules ---------- */
+        .bg-soft {
+            background: linear-gradient(160deg, #fff, #f8faff);
+        }
+        .rule-list {
+            max-width: 700px;
+            margin: 0 auto;
+            list-style: none;
+            padding: 0;
+        }
+        .rule-list li {
+            padding: 13px 0 13px 40px;
+            position: relative;
+            font-size: 15px;
+            color: #555;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .rule-list li::before {
+            content: "\f00c";
+            font-family: FontAwesome;
+            position: absolute;
+            left: 0;
+            top: 13px;
+            color: #1a73e8;
+            font-size: 16px;
+        }
+
+        /* ---------- join ---------- */
+        .join-box {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+            background: #fff;
+            border-radius: 14px;
+            padding: 40px 30px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+            border: 1px solid #f0f0f0;
+        }
+        .join-box .qr-placeholder {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #e8f0fe, #d2e3fc);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 48px;
+            color: #1a73e8;
         }
-        .login-box {
-            width: 100%;
-            max-width: 380px;
-            padding: 40px 30px;
+        .join-box h4 {
+            font-weight: 600;
+            margin-bottom: 6px;
         }
-        .login-box .brand {
-            text-align: center;
-            margin-bottom: 36px;
-        }
-        .login-box .brand-icon {
-            display: inline-block;
-            width: 60px;
-            height: 60px;
-            line-height: 60px;
-            border-radius: 12px;
-            background: #2b6de9;
-            color: #fff;
-            font-size: 28px;
-            margin-bottom: 12px;
-        }
-        .login-box .brand h3 {
-            margin: 0;
-            font-weight: 300;
-            color: #333;
-            letter-spacing: 2px;
-            font-size: 20px;
-        }
-        .login-box .brand small {
-            color: #999;
-            font-weight: 300;
-        }
-        .login-box .form-group {
-            margin-bottom: 18px;
-        }
-        .login-box .input-group-addon {
-            background: #fff;
-            border-right: none;
-            color: #bbb;
-            border-radius: 4px 0 0 4px;
-        }
-        .login-box .form-control {
-            border-left: none;
-            box-shadow: none;
-            height: 44px;
-            font-size: 14px;
-            border-radius: 0 4px 4px 0;
-        }
-        .login-box .form-control:focus {
-            border-color: #ccc;
-            box-shadow: none;
-        }
-        .login-box .input-group .form-control {
-            border-radius: 0 4px 4px 0;
-        }
-        .login-box .input-group .input-group-addon:first-child {
-            border-radius: 4px 0 0 4px;
-        }
-        .login-box .btn-login {
-            height: 44px;
-            font-size: 16px;
-            letter-spacing: 4px;
-            border-radius: 4px;
-            background: #2b6de9;
-            border: none;
-            font-weight: 400;
-            margin-top: 6px;
-            transition: all .25s;
-        }
-        .login-box .btn-login:hover,
-        .login-box .btn-login:focus,
-        .login-box .btn-login:active {
-            background: #1f5ad4;
-            outline: none;
-        }
-        .login-box .extra {
-            margin-top: 16px;
-            text-align: center;
-        }
-        .login-box .extra a {
-            color: #999;
+        .join-box p.tip {
+            color: #aaa;
             font-size: 13px;
-            text-decoration: none;
-            margin: 0 10px;
-            transition: color .2s;
-        }
-        .login-box .extra a:hover {
-            color: #2b6de9;
-        }
-        .footer {
-            text-align: center;
-            padding: 18px 15px;
-            color: #ccc;
-            font-size: 12px;
-        }
-        .footer a {
-            color: #ccc;
-            text-decoration: none;
-        }
-        .footer a:hover {
-            color: #999;
+            margin-bottom: 0;
         }
 
-        /* 小屏幕适配 */
-        @media (max-width: 480px) {
-            .login-box {
-                padding: 30px 20px;
-                max-width: 100%;
-            }
-            .login-box .brand-icon {
-                width: 50px;
-                height: 50px;
-                line-height: 50px;
-                font-size: 24px;
-                border-radius: 10px;
-            }
-            .login-box .brand h3 {
-                font-size: 18px;
-            }
+        /* ---------- footer ---------- */
+        .site-footer {
+            background: #fafafa;
+            border-top: 1px solid #f0f0f0;
+            padding: 28px 0 20px;
+            text-align: center;
+            color: #aaa;
+            font-size: 12px;
+            line-height: 2;
+        }
+        .site-footer a {
+            color: #999;
+            margin: 0 2px;
+        }
+        .site-footer a:hover { color: #1a73e8; }
+        .site-footer .police-icon {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            background: #1a73e8;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 10px;
+            line-height: 14px;
+            text-align: center;
+            margin-right: 3px;
+            vertical-align: -1px;
+        }
+
+        /* ---------- responsive ---------- */
+        @media (max-width: 768px) {
+            .hero { padding: 60px 0 50px; }
+            .hero h1 { font-size: 30px; }
+            .hero p.lead { font-size: 15px; padding: 0 16px; }
+            .section { padding: 48px 0; }
+            .section-title h2 { font-size: 24px; }
+            .feature-card { padding: 22px 14px 14px; }
         }
     </style>
 </head>
 <body>
-    <div class="login-wrapper">
-        <div class="login-main">
-            <div class="login-box">
-                <!-- 品牌标识 -->
-                <div class="brand">
-                    <div class="brand-icon">
-                        <i class="fa fa-graduation-cap"></i>
-                    </div>
-                    <h3>青岛教师网</h3>
-                    <small>青岛市教师 企业微信群 管理系统</small>
-                </div>
 
-                <!-- 登录表单 -->
-                <form>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon">
-                                <i class="fa fa-user-o"></i>
-                            </span>
-                            <input type="text" class="form-control" placeholder="企微编号">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon">
-                                <i class="fa fa-lock"></i>
-                            </span>
-                            <input type="password" class="form-control" placeholder="密码">
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block btn-login">登 录</button>
-                </form>
-
-                <!--<div class="extra">
-                    <a href="#">忘记密码</a>
-                    <span style="color:#ddd;">|</span>
-                    <a href="#">注册账号</a>
-                </div>-->
-            </div>
+<!-- ========== Navbar ========== -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navbar-collapse">
+                <span class="sr-only">导航菜单</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#home">
+                <i class="fa fa-graduation-cap"></i> 青岛教师搭子群
+            </a>
         </div>
-
-        <!-- 底部备案号 -->
-        <div class="footer">
-            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">鲁ICP备2025189343号-8</a>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#features">社群特色</a></li>
+                <li><a href="#rules">社群公约</a></li>
+                <li><a href="#join">加入我们</a></li>
+            </ul>
         </div>
     </div>
+</nav>
+
+<!-- ========== Hero ========== -->
+<div id="home" class="hero">
+    <div class="container">
+        <h1>青岛教师搭子群</h1>
+        <p class="lead">
+            一个专注青岛教师群体的学习与工作分享社群。<br>
+            找搭子、聊教学、共成长，让教师之路不再孤单。
+        </p>
+        <div>
+            <span class="badge-tag"><i class="fa fa-book"></i> 教学研讨</span>
+            <span class="badge-tag"><i class="fa fa-coffee"></i> 日常交流</span>
+            <span class="badge-tag"><i class="fa fa-users"></i> 搭子匹配</span>
+            <span class="badge-tag"><i class="fa fa-calendar"></i> 线下活动</span>
+        </div>
+        <a href="#join" class="btn-hero"><i class="fa fa-hand-o-right"></i> 加入社群</a>
+    </div>
+</div>
+
+<!-- ========== Features ========== -->
+<div id="features" class="section">
+    <div class="container">
+        <div class="section-title">
+            <h2>社群特色</h2>
+            <div class="line"></div>
+            <p class="sub">专为青岛教师打造，找到属于你的搭子</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="feature-card">
+                    <div class="icon-circle"><i class="fa fa-comments"></i></div>
+                    <h4>教学经验分享</h4>
+                    <p>分享公开课心得、班级管理技巧、学科教学方法，互相启发共同进步。</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="feature-card">
+                    <div class="icon-circle"><i class="fa fa-handshake-o"></i></div>
+                    <h4>学习搭子组队</h4>
+                    <p>寻找考研考编、课题研究、技能提升的学习搭子，互相督促高效成长。</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="feature-card">
+                    <div class="icon-circle"><i class="fa fa-paper-plane"></i></div>
+                    <h4>工作信息互通</h4>
+                    <p>共享招聘信息、职称评定经验、学校动态，做彼此的职场信息源。</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="feature-card">
+                    <div class="icon-circle"><i class="fa fa-map-marker"></i></div>
+                    <h4>同城线下活动</h4>
+                    <p>定期组织读书会、教研沙龙、户外团建，从线上到线下，真实连接。</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="feature-card">
+                    <div class="icon-circle"><i class="fa fa-heartbeat"></i></div>
+                    <h4>心理健康互助</h4>
+                    <p>教师群体面临诸多压力，群内相互倾诉、鼓励，守护彼此心理健康。</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="feature-card">
+                    <div class="icon-circle"><i class="fa fa-gift"></i></div>
+                    <h4>资源福利共享</h4>
+                    <p>免费课件、教案模板、教学工具、培训机会等优质资源第一时间群内共享。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ========== Rules ========== -->
+<div id="rules" class="section bg-soft">
+    <div class="container">
+        <div class="section-title">
+            <h2>社群公约</h2>
+            <div class="line"></div>
+            <p class="sub">文明交流 · 真诚互助 · 共建美好社群</p>
+        </div>
+        <ul class="rule-list">
+            <li>仅限青岛地区在职教师或在读师范生加入，入群请做简单自我介绍</li>
+            <li>尊重他人隐私，未经允许不得转发群内聊天记录和个人信息</li>
+            <li>群内交流内容以教学、学习、职场为主，禁止广告及无关链接</li>
+            <li>理性讨论，对事不对人，严禁人身攻击和不当言论</li>
+            <li>鼓励分享优质教育资源和招聘信息，互帮互助共同发展</li>
+            <li>积极参与群内活动和交流，长期潜水可能会被移出群聊</li>
+        </ul>
+    </div>
+</div>
+
+<!-- ========== Join ========== -->
+<div id="join" class="section">
+    <div class="container">
+        <div class="section-title">
+            <h2>加入我们</h2>
+            <div class="line"></div>
+            <p class="sub">扫码或添加群主微信，开启你的教师搭子之旅</p>
+        </div>
+        <div class="join-box">
+            <div class="qr-placeholder">
+                <i class="fa fa-qrcode"></i>
+            </div>
+            <h4>扫码加入群聊</h4>
+            <p class="tip">微信扫码 · 马上入群</p>
+            <p class="tip" style="margin-top:10px;color:#999;">
+                <i class="fa fa-wechat" style="color:#07c160;margin-right:4px;"></i>
+                群主微信号：QdTeacher2025
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ========== Footer ========== -->
+<footer class="site-footer">
+    <div class="container">
+        <p>
+            © 2025 青岛教师搭子群 · All Rights Reserved
+        </p>
+        <p>
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow">
+                鲁ICP备2025189343号-8
+            </a>
+            &nbsp;&nbsp;
+            <span class="police-icon">公</span>
+            <a href="https://www.beian.gov.cn/portal/registerSystemInfo" target="_blank" rel="nofollow">
+                鲁公网安备37130202372909号
+            </a>
+        </p>
+        <p style="margin-top:6px;">
+            本站仅作群聊信息展示，不涉及任何教育培训、商业等用途。
+        </p>
+    </div>
+</footer>
+
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+        // smooth scroll
+        $('a[href^="#"]').on('click', function (e) {
+            var target = $(this.getAttribute('href'));
+            if (target.length) {
+                e.preventDefault();
+                $('html, body').animate({ scrollTop: target.offset().top - 56 }, 500);
+            }
+        });
+
+        // close mobile nav on link click
+        $('#navbar-collapse a').on('click', function () {
+            if ($(window).width() < 768) {
+                $('#navbar-collapse').collapse('hide');
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
